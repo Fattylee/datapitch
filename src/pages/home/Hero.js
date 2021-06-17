@@ -1,14 +1,20 @@
 import { Button } from '@chakra-ui/button';
 import { Image } from '@chakra-ui/image';
-import { Box, Flex, Heading, Text } from '@chakra-ui/layout';
+import { Box, Flex, Text } from '@chakra-ui/layout';
 import React from 'react';
+import { CtaButton } from '../../components/CtaButton';
 
 export const Hero = () => {
   return (
-    <Box as="section" my="12">
-      <Flex justify="space-between" mb="24">
-        <Box flexGrow="1" maxWidth="448px">
-          <Box as="h1" mb="24px" fontSize="60px" lineHeight="70px">
+    <Box as="section">
+      <Flex justify="flex-start" mb="24" pt={{ base: '88px', md: '108px' }}>
+        <Box maxWidth="448px" alignSelf="flex-end">
+          <Box
+            as="h1"
+            mb="24px"
+            fontSize={{ base: '42px', sm: '60px' }}
+            lineHeight={{ base: '52px', sm: '70px' }}
+          >
             Let’s show you the Future of the Gas Industry
           </Box>
           <Text mb="21px">
@@ -17,16 +23,25 @@ export const Hero = () => {
             services suppliers helping them to make faster, more informed
             decisions.
           </Text>
-          <Button bg="#EB5757" color="white" padding="16px 32px" rounded="base">
-            Learn More
-          </Button>
+          <CtaButton>Learn More</CtaButton>
         </Box>
-        <Box maxWidth="400px">
-          <Image src="/assets/home/temp.png" alt="hero image" />
-        </Box>
+        <Box
+          w="68%"
+          h="500px"
+          bgImage="/assets/home/hero.svg"
+          bgSize="cover"
+          display={{ base: 'none', sm: 'block' }}
+        ></Box>
       </Flex>
+
       <Box pos="relative">
-        <Flex bg="#DFF1FF" justify="space-between" h="400px">
+        <Flex
+          bg="#DFF1FF"
+          justify="space-between"
+          h="400px"
+          rounded="15px"
+          overflow="hidden"
+        >
           <Box
             w="149px"
             bgImage="url(/assets/home/sprite-left.svg)"
@@ -36,8 +51,8 @@ export const Hero = () => {
           <Text
             mt="47px"
             maxW="512px"
-            fontSize="32px"
-            lineHeight="41px"
+            fontSize={{ base: '20px', md: '32px' }}
+            lineHeight={{ md: '41px' }}
             bgClip="text"
             bgGradient="linear(122.42deg, #0C1018 0%, #0C1018 46.96%, #2D2F36 82.08%)"
           >
@@ -52,7 +67,7 @@ export const Hero = () => {
         </Flex>
         <Box
           pos="absolute"
-          top={{ base: '200px', lg: '169px' }}
+          top={{ base: '260px', sm: '200px', lg: '169px' }}
           left="50%"
           width="80%"
           transform="translateX(-50%)"

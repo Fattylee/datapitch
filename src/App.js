@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 
 // theme.js
 import { extendTheme } from '@chakra-ui/react';
@@ -21,9 +21,7 @@ const theme = extendTheme({
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box maxWidth="1240px" mx="auto">
-        <HomeIndex />
-      </Box>
+      <HomeIndex />
     </ChakraProvider>
   );
 }
