@@ -1,39 +1,28 @@
 import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 
+// theme.js
+import { extendTheme } from '@chakra-ui/react';
+import { HomeIndex } from './pages/home';
+// Version 1: Using objects
+const theme = extendTheme({
+  styles: {
+    global: {
+      // styles for the `body`
+      body: {
+        bg: 'linear-gradient(122.42deg, #0C1018 0%, #0C1018 46.96%, #2D2F36 82.08%);',
+        color: '#f2f2f2',
+        'font-family': 'Average Sans, sans-serif',
+        bgRepeat: 'no-repeat',
+      },
+    },
+  },
+});
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
+      <Box maxWidth="1240px" mx="auto">
+        <HomeIndex />
       </Box>
     </ChakraProvider>
   );
