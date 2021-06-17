@@ -4,6 +4,7 @@ import { Hero } from './Hero';
 import { Services } from './Services';
 import { NavBar } from './NavBar';
 import { Container } from '../../components/Container';
+import { Report } from './Report';
 
 export const HomeIndex = () => {
   return (
@@ -13,6 +14,7 @@ export const HomeIndex = () => {
         <Box as="main">
           <Hero />
           <Services />
+          <Report />
         </Box>
       </Container>
     </Box>

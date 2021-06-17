@@ -8,6 +8,9 @@ import { HomeIndex } from './pages/home';
 const theme = extendTheme({
   styles: {
     global: {
+      html: {
+        scrollBehavior: 'smooth',
+      },
       // styles for the `body`
       body: {
         bg: 'linear-gradient(122.42deg, #0C1018 0%, #0C1018 46.96%, #2D2F36 82.08%);',

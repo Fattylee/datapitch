@@ -3,6 +3,14 @@ import { Box, Flex, Link } from '@chakra-ui/layout';
 import React, { useState } from 'react';
 import { Container } from '../../components/Container';
 
+const navlinks = [
+  { name: 'Report Store', path: '#report' },
+  { name: 'Services', path: '#services' },
+  { name: 'Use cases', path: '#use-cases' },
+  { name: 'About', path: '#about' },
+  { name: 'Contact', path: '#contact' },
+];
+
 export const NavBar = () => {
   const [isChecked, setIsChecked] = useState(true);
   const cStyle = {
@@ -61,13 +69,16 @@ export const NavBar = () => {
                 </Box>
 
                 <Box d={isChecked ? 'none' : 'block'} bg="" w="100%" mt="2rem">
-                  <Link {...cStyle}>Report store</Link>
-                  <Link onClick={() => setIsChecked(s => !s)} {...cStyle}>
-                    Services
-                  </Link>
-                  <Link {...cStyle}>Use Cases</Link>
-                  <Link {...cStyle}>About</Link>
-                  <Link {...cStyle}>Contact</Link>
+                  {navlinks.map(({ name, path }, index) => (
+                    <Link
+                      key={index}
+                      href={path}
+                      onClick={() => setIsChecked(s => !s)}
+                      {...cStyle}
+                    >
+                      {name}
+                    </Link>
+                  ))}
                 </Box>
               </Box>
             </Box>
@@ -78,11 +89,11 @@ export const NavBar = () => {
               justifyContent="flex-end"
               flexGrow="1"
             >
-              <Link marginLeft="2rem">Report store</Link>
-              <Link marginLeft="2rem">Services</Link>
-              <Link marginLeft="2rem">Use Cases</Link>
-              <Link marginLeft="2rem">About</Link>
-              <Link marginLeft="2rem">Contact</Link>
+              {navlinks.map(({ name, path }, index) => (
+                <Link key={index} href={path} marginLeft="2rem">
+                  {name}
+                </Link>
+              ))}
             </Box>
           </Flex>
         </Container>

@@ -5,7 +5,11 @@ import React from 'react';
 
 export const Services = () => {
   return (
-    <Box as="section" mt={{ base: '140px', md: '240px', lg: '372px' }}>
+    <Box
+      as="section"
+      id="services"
+      mt={{ base: '140px', md: '240px', lg: '372px' }}
+    >
       <Box as="h2" fontSize="32px" lineHeight="41.47px" mb="25.5px">
         OUR SERVICES
       </Box>

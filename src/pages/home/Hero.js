@@ -1,4 +1,3 @@
-import { Button } from '@chakra-ui/button';
 import { Image } from '@chakra-ui/image';
 import { Box, Flex, Text } from '@chakra-ui/layout';
 import React from 'react';
@@ -8,7 +7,7 @@ export const Hero = () => {
   return (
     <Box as="section">
       <Flex justify="flex-start" mb="24" pt={{ base: '88px', md: '108px' }}>
-        <Box maxWidth="448px" alignSelf="flex-end">
+        <Box maxWidth="448px" alignSelf="center">
           <Box
             as="h1"
             mb="24px"
@@ -26,7 +25,7 @@ export const Hero = () => {
           <CtaButton>Learn More</CtaButton>
         </Box>
         <Box
-          w="68%"
+          w="100%"
           h="500px"
           bgImage="/assets/home/hero.svg"
           bgSize="cover"
