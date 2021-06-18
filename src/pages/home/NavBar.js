@@ -31,7 +31,8 @@ export const NavBar = () => {
           <Flex
             as="nav"
             h={{ base: 'auto', md: '100px' }}
-            align="center" // fontFamily="Avenir"
+            align="center"
+            // fontFamily="Avenir" not available for free
             flexDirection={{ base: 'column', sm: 'row' }}
             pt={{ base: '16px', md: 'unset' }}
             pb={{ base: isChecked ? '16px' : '0px', md: 'unset' }}
@@ -47,10 +48,25 @@ export const NavBar = () => {
               width={{ base: '100%', md: 'auto' }}
               pos="relative"
             >
-              <Link href="/#" _hover={{ textDecoration: 'none' }}>
+              <Link
+                href="/#"
+                _hover={{ textDecoration: 'none' }}
+                onClick={() => setIsChecked(true)}
+              >
                 Datapitch
               </Link>
               <Box cursor="pointer" d={{ md: 'none' }} w="100%">
+                <Box
+                  onClick={() => setIsChecked(true)}
+                  pos="fixed"
+                  top="0"
+                  left="0"
+                  right="0"
+                  bottom="0"
+                  bg="#00000000"
+                  zIndex={-2}
+                  d={isChecked ? 'none' : 'block'}
+                ></Box>
                 <Box
                   pos="absolute"
                   top="0"
@@ -68,6 +84,7 @@ export const NavBar = () => {
                   )}
                 </Box>
 
+                {/* Mobile navbar */}
                 <Box d={isChecked ? 'none' : 'block'} bg="" w="100%" mt="2rem">
                   {navlinks.map(({ name, path }, index) => (
                     <Link
@@ -90,7 +107,15 @@ export const NavBar = () => {
               flexGrow="1"
             >
               {navlinks.map(({ name, path }, index) => (
-                <Link key={index} href={path} marginLeft="2rem">
+                <Link
+                  key={index}
+                  href={path}
+                  marginLeft="2rem"
+                  pb="0.5rem"
+                  _hover={{
+                    borderBottom: '1px solid #EB5757',
+                  }}
+                >
                   {name}
                 </Link>
               ))}

@@ -15,8 +15,13 @@ const theme = extendTheme({
       body: {
         bg: 'linear-gradient(122.42deg, #0C1018 0%, #0C1018 46.96%, #2D2F36 82.08%);',
         color: '#f2f2f2',
-        'font-family': 'Average Sans, sans-serif',
+        fontFamily: 'Average Sans, sans-serif',
         bgRepeat: 'no-repeat',
+      },
+      a: {
+        _hover: {
+          textDecoration: 'none',
+        },
       },
     },
   },

@@ -21,7 +21,7 @@ export const Services = () => {
           md: `"market eco" "market real"`,
         }}
         color="white"
-        // fontFamily="Avenir"
+        // fontFamily="Avenir" not available for free
       >
         <Box bg="#776BF8" rounded="16px" p="19px 26px 30px" gridArea="market">
           <Box

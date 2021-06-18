@@ -17,8 +17,9 @@ export const Report = () => {
           bgImage="/assets/home/report.svg"
           bgSize="cover"
           display={{ base: 'none', sm: 'block' }}
+          mr="2rem"
         ></Box>
-        <Box maxWidth="490px" salignSelf="center">
+        <Box maxWidth="490px">
           <Box
             as="h3"
             mb="17px"
