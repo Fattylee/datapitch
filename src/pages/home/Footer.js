@@ -47,12 +47,20 @@ export const Footer = () => {
             mt={{ base: '40px', md: '0' }}
           >
             {socialLinks.map(({ href, icon: Icon }, index) => (
-              <Link key={index} href={href} ml={{ md: '40px' }}>
+              <Link
+                key={index}
+                href={href}
+                ml={{ md: '40px' }}
+                _hover={{ color: '#c2b5b5' }}
+                _focus={{ boxShadow: 'none' }}
+                _active={{ transform: 'scale(0.98)' }}
+              >
                 <Icon size="42" />
               </Link>
             ))}
           </Flex>
         </Flex>
+
         <Box
           px={{ base: '16px', md: '80px', lg: '114px' }}
           pt="63px"
