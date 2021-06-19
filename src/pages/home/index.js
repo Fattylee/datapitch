@@ -5,6 +5,7 @@ import { Services } from './Services';
 import { NavBar } from './NavBar';
 import { Container } from '../../components/Container';
 import { Report } from './Report';
+import { Footer } from './Footer';
 
 export const HomeIndex = () => {
   return (
@@ -17,6 +18,7 @@ export const HomeIndex = () => {
           <Report />
         </Box>
       </Container>
+      <Footer />
     </Box>
   );
 };
