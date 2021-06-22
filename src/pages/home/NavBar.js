@@ -2,6 +2,8 @@ import { Image } from '@chakra-ui/image';
 import { Box, Flex, Link } from '@chakra-ui/layout';
 import React, { useState } from 'react';
 import { Container } from '../../components/Container';
+import { Close } from '../../components/VectorIcons/Close';
+import { Open } from '../../components/VectorIcons/Open';
 
 const navlinks = [
   { name: 'Report Store', path: '#report' },
@@ -73,15 +75,7 @@ export const NavBar = () => {
                   right="0"
                   onClick={() => setIsChecked(s => !s)}
                 >
-                  {isChecked ? (
-                    <Image
-                      color="white"
-                      width="36px"
-                      src="/assets/home/open.svg"
-                    />
-                  ) : (
-                    <Image width="36px" src="/assets/home/close.svg" />
-                  )}
+                  <Box w="36px">{isChecked ? <Open /> : <Close />}</Box>
                 </Box>
 
                 {/* Mobile navbar */}
