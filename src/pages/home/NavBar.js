@@ -1,4 +1,3 @@
-import { Image } from '@chakra-ui/image';
 import { Box, Flex, Link } from '@chakra-ui/layout';
 import React, { useState } from 'react';
 import { Container } from '../../components/Container';
